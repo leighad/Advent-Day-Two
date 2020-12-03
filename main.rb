@@ -1003,14 +1003,21 @@ data = '6-10 p: ctpppjmdpppppp
 new_data = data.split
 # puts new_data
 
-# num_data = new_data.map { |el, idx| el if idx + 1 / 3 % === 0 }
+###need to break new_data into chunks of threes!!
+magic = new_data.each_slice(3).to_a
+# magic = new_data.combination(3).map { |a, b, c| [a ,b, c] }
+puts magic[0]
 
-n = 3
-num_data = (n - 1).step(new_data.size - 1, n).map { |i| new_data[i] }
-puts num_data
+# num_data = new_data.map { |el, i| el if i % 2 == 0 }
 
 # num_data.delete(0)
+
 # puts num_data
+
+####this gives each 3rd element in new_data
+# n = 3
+# letters = (n - 1).step(new_data.size - 1, n).map { |i| new_data[i] }
+# puts letters
 
 #use combination and any? or similar to do comparison #against [a, b, c]
 # magic = new_data.detect { |a, b, c|  } 
